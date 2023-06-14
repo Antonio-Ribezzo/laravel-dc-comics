@@ -17,7 +17,7 @@ class ComicController extends Controller
         //recupero dati dal DB
         $comics = Comic::All();
 
-        return view( 'pages.index', compact('comics') );
+        return view( 'pages.comics.index', compact('comics') );
     }
 
     /**
@@ -47,9 +47,13 @@ class ComicController extends Controller
      * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function show(Comic $comic)
+    public function show($id)
     {
-        //
+        //logica per ottenere i dati del singolo record
+        $comic = Comic::findOrFail($id);
+
+
+        return view('pages.comics.show', compact('comic'));
     }
 
     /**

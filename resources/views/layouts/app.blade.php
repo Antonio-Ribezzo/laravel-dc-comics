@@ -18,7 +18,7 @@
 
     <main>
         <!-- Contenuto variabile in base alle pagine -->
-        @yield( 'contentHome' )
+        @yield( 'content' )
 
         <section id="sectionStore">
             <div class="container py-5">

@@ -20,9 +20,11 @@
 <header class="d-flex justify-content-between align-items-center">
 
     <!-- logo sx -->
-    <div>
-        <img src="{{ Vite::asset('resources/img/dc-logo.png') }}" alt="logo-small">
-    </div>
+    <a href="{{ route('home') }}"> 
+        <div>
+            <img src="{{ Vite::asset('resources/img/dc-logo.png') }}" alt="logo-small">
+        </div>
+    </a>
 
      <!-- navbar dx -->
     <nav>
@@ -31,7 +33,7 @@
                 <a class="text-uppercase" href="#">caharacters</a> 
             </li>
             <li class="borderLightBlue">
-                <a class="text-uppercase colorLightBlue" href="#">comics</a> 
+                <a href="{{ route('comics.index') }}" class="text-uppercase colorLightBlue" href="#">comics</a> 
             </li>
             <li>
                 <a class="text-uppercase" href="#">movies</a> 

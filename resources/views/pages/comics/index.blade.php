@@ -5,7 +5,7 @@
 @endsection
 
 
-@section('contentHome') 
+@section('content') 
     <section id="mainSection">
         <div class="container py-5 text-center position-relative">
             <div>
@@ -13,13 +13,13 @@
             </div>
             <ul class="d-flex justify-content-between align-items-start flex-wrap">
                 <!-- card -->
-                @foreach ($comics as $el)
+                @foreach ($comics as $elem)
                     <li class="my-4">
-                        <a class="text-white" href="#">
-                            <img src="{{$el->thumb}}" alt="{{$el->series}}">
-                            <p class="mt-2 text-start">{{$el->series}}</p>
-                            <span class="m-0 text-start">{{$el->price}}</span>
-                            <span class="m-0 text-start">{{$el->type}}</span>
+                        <a class="text-white" href="{{ route( 'comics.show', ['comic' => $elem->id]) }}">
+                            <img src="{{$elem->thumb}}" alt="{{$elem->series}}">
+                            <p class="mt-2 text-start">{{$elem->series}}</p>
+                            <span class="m-0 text-start">{{$elem->price}}</span>
+                            <span class="m-0 text-start">{{$elem->type}}</span>
                         </a>
                     </li> 
                 @endforeach
