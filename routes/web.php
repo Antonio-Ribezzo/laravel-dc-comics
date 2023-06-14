@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+//controller CRUD
+use App\Http\Controllers\ComicController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home');
-});
+// Route::get('/', function () {
+//     return view('pages.home');
+// });
+
+
+//genero tramite controller tutte le rotte per le crud
+Route::resource('/', ComicController::class);
