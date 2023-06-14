@@ -57,7 +57,7 @@
                 <a class="text-uppercase" href="#">news</a> 
             </li>
             <li>
-                <a class="text-uppercase" href="#">shop</a> 
+                <a href="{{ route('comics.create') }}" class="text-uppercase" href="#">Add Comic</a> 
             </li>
         </ul>
     </nav>
