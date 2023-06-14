@@ -1,0 +1,51 @@
+#mainSection{
+    background-color: #1c1c1c;
+    div{
+        #currentSeries{
+            top: -20px;
+            left: 0;
+            font-family: 'Asap Condensed', sans-serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            background-color: $colorLightBlue;
+            border: none;
+            padding: 0.5rem 1rem;
+        }
+        ul{
+            color: white;
+            li{
+                list-style: none;
+                width: calc((100% / 6) - 1rem);
+                a{
+                    text-decoration: none;
+                    &:hover{
+                        filter: brightness(1.2);
+                    }
+        
+                    img{
+                        height: 10rem;
+                        width: 100%;
+                    }
+        
+                    span{
+                        display: block;
+                        font-size: 0.7rem;
+                        color: grey;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+        button{
+            font-family: 'Asap Condensed', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            background-color: $colorLightBlue;
+            border: none;
+            padding: 0.5rem 2rem;
+            &:hover{
+                background-color: #0282f98e;
+            }
+        }
+    }
+}

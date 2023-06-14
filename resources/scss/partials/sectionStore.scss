@@ -1,0 +1,28 @@
+#sectionStore{
+    background-color: $colorLightBlue;
+    z-index: 999999;
+    position: relative;
+    div{
+        ul{
+        margin: 0;
+        li{
+            list-style: none;
+            font-family: 'Khula', sans-serif;
+            a{
+                text-decoration: none;
+                color: white;
+                span{
+                    padding: 0.6rem;
+                    &:hover{
+                        background-color: rgba(96, 108, 112, 0.741);
+                    }
+                }
+                img{
+                    max-height: 3rem;
+                    max-width:3rem;
+                }
+            }
+        }
+    }
+    }
+}

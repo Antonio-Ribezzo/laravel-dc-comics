@@ -1,0 +1,60 @@
+#topBar{
+    background-color: $colorLightBlue;
+    color: white;
+    font-size: 0.6rem;
+    #topBarContainer{
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        margin: 0 auto;
+    }
+}
+
+header{
+    width: 80%;
+    margin: 0 auto;
+    nav{
+        ul{
+            margin: 0;
+            li{
+                list-style: none;
+                margin: 0 1rem;
+                padding: 3rem 0;
+                font-family: 'Asap Condensed', sans-serif;
+                font-weight: 600;
+                a{
+                    text-decoration: none;
+                    color: #464646;
+                    &:hover{
+                        background-color: #0282f99e;
+                    }
+                }
+            }
+        }
+    }
+    .input-group{
+        width: 12rem;
+        border-bottom: 2px solid $colorLightBlue;
+        input{
+            padding-left: 80px;
+            border-radius: none;
+            border: none;
+        }
+        button{
+            border-radius: none;
+
+            border: none;
+            background-color: white;
+        }
+    }
+}
+
+#jumbotron{
+    height: 25rem;
+    width: 100%;
+    background-image: url('../img/jumbotron.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

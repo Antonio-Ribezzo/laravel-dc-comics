@@ -1,0 +1,63 @@
+#siteMap{
+    background-image: url('../img/footer-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 25rem;
+    width: 100%;
+    #container0{
+        height: 100%;
+        width: 100%;
+        div{
+            div{
+                h4{
+                    font-family: 'Asap Condensed', sans-serif;
+                    font-weight: 600;
+                }
+                ul{
+                    margin: 0;
+                    padding: 0;
+                    
+                    li{
+                        list-style: none;
+                        font-family: 'Khula', sans-serif;
+                        font-size: 0.8rem;
+                        a{
+                            text-decoration: none;
+                            color: grey;
+                            &:hover{
+                                background-color: rgba(96, 108, 112, 0.741);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+
+footer{
+    position: relative;
+    background-color: #303030;
+    z-index: 999999999999;
+    button{
+        background-color: #303030;
+        border: 0.1rem solid $colorLightBlue;
+        &:hover{
+            background-color: #4d799b8a;
+        }
+    }
+    span{
+        // font-family: 'Asap Condensed', sans-serif;
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+    img{
+        &:hover{
+            border: 1px solid aqua;
+            border-radius: 50%;
+        }
+    }
+}
