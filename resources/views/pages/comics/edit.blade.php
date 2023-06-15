@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title') 
-    Add Comic
+    Edit Comic
 @endsection
 
 @section('content')
