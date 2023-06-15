@@ -21,6 +21,7 @@
                             <span class="m-0 text-start">{{$elem->price}}</span>
                             <span class="m-0 text-start">{{$elem->type}}</span>
                         </a>
+                    <a href="{{ route('comics.edit', $elem)}}" class="btn btn-dark mt-1">modifica</a>
                     </li> 
                 @endforeach
             </ul>
