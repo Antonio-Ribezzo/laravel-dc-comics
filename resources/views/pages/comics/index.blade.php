@@ -21,11 +21,21 @@
                             <span class="m-0 text-start">{{$elem->price}}</span>
                             <span class="m-0 text-start">{{$elem->type}}</span>
                         </a>
-                    <a href="{{ route('comics.edit', $elem)}}" class="btn btn-dark mt-1">modifica</a>
+
+                        {{-- button edit --}}
+                        <a href="{{ route('comics.edit', $elem)}}" class="btn btn-dark mt-1">modifica</a>
+
+                        {{-- button delete --}}
+                        <form action=" {{route('comics.destroy', $elem) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit" class="btn btn-danger mt-2">delete</button>
+                        </form>
                     </li> 
                 @endforeach
             </ul>
-            <button class="text-white text-uppercase">load more</button>
+            <button class="loadMore text-white text-uppercase">load more</button>
         </div>
     </section>
 @endsection
