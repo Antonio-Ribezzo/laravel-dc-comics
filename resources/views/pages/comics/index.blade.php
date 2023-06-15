@@ -26,11 +26,11 @@
                         <a href="{{ route('comics.edit', $elem)}}" class="btn btn-dark mt-1">modifica</a>
 
                         {{-- button delete --}}
-                        <form action=" {{route('comics.destroy', $elem) }}" method="POST">
+                        <form class="formDeleteComic" action="{{route('comics.destroy', $elem) }}" method="POST">
                             @csrf
                             @method('DELETE')
 
-                            <button type="submit" class="btn btn-danger mt-2">delete</button>
+                            <button type="button" class="btn btn-danger mt-2" onclick="popUpDelete()">delete</button>
                         </form>
                     </li> 
                 @endforeach
@@ -38,4 +38,16 @@
             <button class="loadMore text-white text-uppercase">load more</button>
         </div>
     </section>
+   
+   
+    <script>
+        function popUpDelete(event) {
+            if( confirm("Are you sure you want to delete the Comic?")==true){
+                document.querySelector('.formDeleteComic').submit();
+            } else {
+                event.preventDefault();
+            }
+        }
+    </script>
 @endsection
+
