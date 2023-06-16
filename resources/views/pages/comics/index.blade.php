@@ -11,13 +11,20 @@
             <div>
                 <span id="currentSeries" class="text-uppercase text-white position-absolute">current series</span>
             </div>
+            {{-- message --}}
+            @if(Session::has('success'))
+                <div class="text-success text-center">
+                    {!! Session::get('success') !!}
+                </div>
+            @endif
             <ul class="d-flex justify-content-between align-items-start flex-wrap">
+
                 <!-- card -->
                 @foreach ($comics as $elem)
                     <li class="my-4">
                         <a class="text-white" href="{{ route( 'comics.show', ['comic' => $elem->id]) }}">
                             <img src="{{$elem->thumb}}" alt="{{$elem->series}}">
-                            <p class="mt-2 text-start">{{$elem->series}}</p>
+                            <p class="mt-2 text-start">{{$elem->title}}</p>
                             <span class="m-0 text-start">{{$elem->price}}</span>
                             <span class="m-0 text-start">{{$elem->type}}</span>
                         </a>
@@ -26,11 +33,11 @@
                         <a href="{{ route('comics.edit', $elem)}}" class="btn btn-dark mt-1">modifica</a>
 
                         {{-- button delete --}}
-                        <form class="formDeleteComic" action="{{route('comics.destroy', $elem) }}" method="POST">
+                        <form id="formDeleteComic_{{ $elem->id }}" action="{{route('comics.destroy', ['comic' => $elem['id']]) }}" method="POST">
                             @csrf
                             @method('DELETE')
 
-                            <button type="button" class="btn btn-danger mt-2" onclick="popUpDelete()">delete</button>
+                            <button type="button" class="btn btn-danger mt-2" onclick="popUpDelete({{ $elem->id }})">delete</button>
                         </form>
                     </li> 
                 @endforeach
@@ -41,9 +48,9 @@
    
    
     <script>
-        function popUpDelete(event) {
+        function popUpDelete(id) {
             if( confirm("Are you sure you want to delete the Comic?")==true){
-                document.querySelector('.formDeleteComic').submit();
+                document.querySelector('#formDeleteComic_'+ id).submit();
             } else {
                 event.preventDefault();
             }

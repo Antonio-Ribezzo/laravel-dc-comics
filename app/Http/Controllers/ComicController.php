@@ -38,6 +38,18 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        //validazione
+        $request->validate(
+            [
+                'title'=> ['required', 'max:30']
+            ],
+            [
+                'title.required'=>'Il campo è obbligatorio'
+            ]);
+
+
+
+
         //logica per salvare il nuovo dato nel DB
         $form_data = $request->all();
 
@@ -56,7 +68,7 @@ class ComicController extends Controller
 
         $new_comic->save();
 
-        return redirect()->route( 'comics.index' );
+        return redirect()->route( 'comics.index' )->with('success', 'Fumetto aggiunto correttamente');
     }
 
     /**

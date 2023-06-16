@@ -15,6 +15,17 @@
             <div class="mb-3">
                 <label for="comic-title" class="form-label">Comic Title</label>
                 <input type="text" class="form-control" id="comic-title" name="title" placeholder="Es: American Vampire">
+                {{-- validation: errors message  --}}
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                        </ul>
+                    
+                    </div>
+                @endif
             </div>
 
             <div class="mb-3">
