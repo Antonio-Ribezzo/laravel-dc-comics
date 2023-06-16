@@ -6,8 +6,11 @@
 
 Gestione di un archivio di fumetti utilizzando Laravel 9 (Model con relativa Migration, Controller e Seeder).
 
-## Operazioni CRUD da utilizzare:
+## Operazioni CRUD utilizzate:
 - index()
 - show()
 - create()
 - store()
+- edit()
+- update()
+- destroy()
