@@ -41,10 +41,23 @@ class ComicController extends Controller
         //validazione
         $request->validate(
             [
-                'title'=> ['required', 'max:30']
+                'title'=> ['required', 'max:20'],
+                'description'=> ['required'],
+                'thumb'=> ['required'],
+                'price'=> ['required'],
+                'series'=> ['required', 'max:30'],
+                'sale_date'=> ['required','date'],
+                'type'=> ['required', 'max:30'],
             ],
             [
-                'title.required'=>'Il campo è obbligatorio'
+                'title.required'=>'Il campo è obbligatorio',
+                'title.max'=>'Il titolo è troppo lungo',
+                'description.required'=>'Il campo è obbligatorio',
+                'thumb.required'=>'Il campo è obbligatorio',
+                'price.required'=>'Il campo è obbligatorio',
+                'series.required'=>'Il campo è obbligatorio',
+                'sale_date.required'=>'Il campo è obbligatorio',
+                'type.required'=>'Il campo è obbligatorio'
             ]);
 
 
