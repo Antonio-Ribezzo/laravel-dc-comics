@@ -20,7 +20,8 @@
                 background-color: #333131;
                 border-radius: 2rem;
                 &:hover{
-                    scale: 105%;
+                    scale: 102%;
+                    box-shadow: 0 4px 8px 0 rgba(228, 225, 225, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
                 }
                 a{
                     text-decoration: none;

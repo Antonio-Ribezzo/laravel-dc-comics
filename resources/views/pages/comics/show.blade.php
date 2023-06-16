@@ -15,14 +15,14 @@
             <span class="mt-2 text-start">Price: {{$comic['price']}}</span>
             <span class="mt-2 text-start d-block">Type: {{$comic['type']}}</span>
             {{-- button edit --}}
-            <a href="{{ route('comics.edit', $comic)}}" class="btn btn-dark mt-1">modifica</a>
+            <a href="{{ route('comics.edit', $comic)}}" class="btn btn-dark mt-4">modifica</a>
 
             {{-- button delete --}}
             <form class="formDeleteComic" action="{{route('comics.destroy', $comic) }}" method="POST">
                 @csrf
                 @method('DELETE')
 
-                <button type="button" class="btn btn-danger mt-2" onclick="popUpDelete()">delete</button>
+                <button type="button" class="btn btn-danger mt-2" onclick="popUpDelete()">elimina</button>
             </form>
         </div>
     </div>

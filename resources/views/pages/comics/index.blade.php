@@ -34,14 +34,14 @@
                         </a>
 
                         {{-- button edit --}}
-                        <a href="{{ route('comics.edit', $elem)}}" class="btn btn-dark mt-1">modifica</a>
+                        <a href="{{ route('comics.edit', $elem)}}" class="btn btn-dark mt-2">modifica</a>
 
                         {{-- button delete --}}
                         <form id="formDeleteComic_{{ $elem->id }}" action="{{route('comics.destroy', ['comic' => $elem['id']]) }}" method="POST">
                             @csrf
                             @method('DELETE')
 
-                            <button type="button" class="btn btn-danger mt-2" onclick="popUpDelete({{ $elem->id }})">delete</button>
+                            <button type="button" class="btn btn-danger mt-2" onclick="popUpDelete({{ $elem->id }})">elimina</button>
                         </form>
                     </li> 
                 @endforeach
