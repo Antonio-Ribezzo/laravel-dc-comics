@@ -23,10 +23,14 @@
                 @foreach ($comics as $elem)
                     <li class="my-4">
                         <a class="text-white" href="{{ route( 'comics.show', ['comic' => $elem->id]) }}">
-                            <img src="{{$elem->thumb}}" alt="{{$elem->series}}">
-                            <p class="mt-2 text-start">{{$elem->title}}</p>
-                            <span class="m-0 text-start">{{$elem->price}}</span>
-                            <span class="m-0 text-start">{{$elem->type}}</span>
+                            <div class="text-red">
+                                <div>
+                                    <img class="img-fluid" src="{{$elem->thumb}}" alt="{{$elem->series}}">
+                                </div>
+                                <p class="mt-2 text-center">{{$elem->title}}</p>
+                                <span class="m-0 text-start">{{$elem->price}}</span>
+                                <span class="m-0 text-start">{{$elem->type}}</span>
+                            </div>
                         </a>
 
                         {{-- button edit --}}
