@@ -41,7 +41,7 @@ class ComicController extends Controller
         //validazione
         $request->validate(
             [
-                'title'=> ['required', 'max:20'],
+                'title'=> ['required', 'max:50'],
                 'description'=> ['required'],
                 'thumb'=> ['required'],
                 'price'=> ['required'],
@@ -119,10 +119,33 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        //validazione
+        $request->validate(
+            [
+                'title'=> ['required', 'max:50'],
+                'description'=> ['required'],
+                'thumb'=> ['required'],
+                'price'=> ['required'],
+                'series'=> ['required', 'max:30'],
+                'sale_date'=> ['required','date'],
+                'type'=> ['required', 'max:30'],
+            ],
+            [
+                'title.required'=>'Il campo è obbligatorio',
+                'title.max'=>'Il titolo è troppo lungo',
+                'description.required'=>'Il campo è obbligatorio',
+                'thumb.required'=>'Il campo è obbligatorio',
+                'price.required'=>'Il campo è obbligatorio',
+                'series.required'=>'Il campo è obbligatorio',
+                'sale_date.required'=>'Il campo è obbligatorio',
+                'type.required'=>'Il campo è obbligatorio'
+            ]);
+
+
         $form_data = $request->all();
         $comic->update($form_data);
 
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.index')->with('success', 'Fumetto modificato correttamente');
     }
 
     /**
